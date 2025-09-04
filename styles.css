@@ -125,9 +125,9 @@ p {
     background-color: transparent;
     border: 2px solid #25D366;
     color: #25D366;
-    padding: 8px 12px;
-    font-size: 0.875rem;
-    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    border-radius: 8px;
 }
 
 .navbar .btn-whatsapp:hover {
@@ -140,9 +140,10 @@ p {
 @media (max-width: 1023px) {
     .navbar .btn-whatsapp {
         padding: 8px;
-        min-width: 44px;
-        min-height: 44px;
+        min-width: 40px;
+        min-height: 40px;
         justify-content: center;
+        border-radius: 50%;
     }
     
     .navbar .btn-whatsapp span {
@@ -461,6 +462,7 @@ p {
     z-index: 2;
     max-width: 800px;
     padding: 120px 0 80px;
+    text-align: center;
 }
 
 .hero-title {
@@ -469,6 +471,7 @@ p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
 }
 
 .hero-subtitle {
@@ -476,6 +479,7 @@ p {
     color: #9CA3AF;
     margin-bottom: 48px;
     line-height: 1.6;
+    text-align: center;
 }
 
 .hero-features {
@@ -516,6 +520,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    justify-content: center;
 }
 
 @media (min-width: 640px) {
@@ -525,10 +530,17 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    .hero-ctas {
+        align-items: center;
+    }
+}
+
 /* Seções Gerais - Mobile First */
 section {
     padding: 96px 0; /* py-24 mobile (24 * 4px = 96px) */
     position: relative;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 @media (min-width: 768px) {
@@ -543,13 +555,108 @@ section {
     }
 }
 
+/* Garantir contraste AA */
+.section-title {
+    color: #FFFFFF;
+}
+
+.section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+}
+
+p, li, span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Seções com fundos alternados */
+.section-dark-primary {
+    background-color: #0B0B0B;
+    background-image: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.08), transparent 60%);
+    position: relative;
+}
+
+.section-dark-secondary {
+    background-color: #151515;
+    background-image: radial-gradient(circle at 70% 80%, rgba(212, 175, 55, 0.06), transparent 50%);
+    position: relative;
+}
+
+.section-dark-tertiary {
+    background-color: #1E1E1E;
+    background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04), transparent 70%);
+    position: relative;
+}
+
+.section-dark-primary::before,
+.section-dark-secondary::before,
+.section-dark-tertiary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.5) 50%, transparent 100%);
+    z-index: 1;
+}
+
+/* Section with background image - Real Marble Image */
+.section-with-bg {
+    position: relative;
+    min-height: 560px;
+    background-image: url('./images/marble-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(110%) contrast(110%);
+}
+
+.section-with-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+.section-with-bg .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-with-bg .section-title,
+.section-with-bg .section-subtitle {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .section-with-bg {
+        min-height: 480px;
+        background-attachment: scroll;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-with-bg {
+        min-height: 640px;
+    }
+}
+
 /* Alternância de Fundos - Luxo Sutil */
 .hero {
     background-color: #0B0B0B; /* Seção ímpar */
 }
 
 .services {
-    background-color: #111111; /* Seção par */
+    background-color: #151515; /* Seção par */
 }
 
 .portfolio {
@@ -557,7 +664,7 @@ section {
 }
 
 .process {
-    background-color: #111111; /* Seção par */
+    background-color: #1E1E1E; /* Seção par */
 }
 
 .differentials {
@@ -565,7 +672,7 @@ section {
 }
 
 .testimonials {
-    background-color: #111111; /* Seção par */
+    background-color: #151515; /* Seção par */
 }
 
 .faq {
@@ -573,7 +680,7 @@ section {
 }
 
 .contact {
-    background-color: #111111; /* Seção par */
+    background-color: #1E1E1E; /* Seção par */
 }
 
 /* Divisores Dourados Entre Seções */
@@ -653,14 +760,16 @@ section {
 }
 
 .service-card {
-    background-color: #0B0B0B;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 12px;
     padding: 32px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08);
 }
 
 .service-card::before {
@@ -680,8 +789,8 @@ section {
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: #D4AF37;
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.12);
 }
 
 .service-icon {
@@ -800,8 +909,21 @@ section {
 }
 
 .process-step {
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
     text-align: center;
     position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08);
+}
+
+.process-step:hover {
+    transform: translateY(-2px);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.12), 0 0 0 1px rgba(212, 175, 55, 0.1);
 }
 
 .step-number {
@@ -860,16 +982,18 @@ section {
 .differential-item {
     text-align: center;
     padding: 32px;
-    background-color: #111111;
+    background: #141414;
     border-radius: 12px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.4);
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08);
 }
 
 .differential-item:hover {
     transform: translateY(-8px);
-    border-color: #D4AF37;
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.12);
 }
 
 .differential-icon {
@@ -904,11 +1028,20 @@ section {
 }
 
 .testimonial-item {
-    background-color: #0B0B0B;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 12px;
     padding: 32px;
     position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08);
+}
+
+.testimonial-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.12), 0 0 0 1px rgba(212, 175, 55, 0.1);
 }
 
 .testimonial-item::before {
@@ -950,11 +1083,14 @@ section {
 }
 
 .faq-item {
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 12px;
     margin-bottom: 16px;
     overflow: hidden;
-    background-color: #111111;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08);
+    transition: all 0.3s ease;
 }
 
 .faq-question {
@@ -1025,18 +1161,20 @@ section {
 }
 
 .contact-card {
-    background-color: #0B0B0B;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 12px;
     padding: 32px;
     text-align: center;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08);
 }
 
 .contact-card:hover {
     transform: translateY(-8px);
-    border-color: #D4AF37;
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.12);
 }
 
 .contact-icon {
@@ -1125,8 +1263,15 @@ section {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
 }
 
 .footer-column h4 {
