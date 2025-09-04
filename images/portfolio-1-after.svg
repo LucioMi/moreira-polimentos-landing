@@ -1,0 +1,49 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="polishedMarble" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#E9ECEF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DEE2E6;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#CED4DA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ADB5BD;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="shine1" cx="30%" cy="30%" r="40%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="shine2" cx="70%" cy="60%" r="30%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </radialGradient>
+    <pattern id="marbleVeins" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="url(#polishedMarble)"/>
+      <path d="M0,20 Q10,15 20,20 T40,20" stroke="#ADB5BD" stroke-width="0.5" opacity="0.3" fill="none"/>
+      <path d="M0,30 Q15,25 30,30 T40,30" stroke="#CED4DA" stroke-width="0.3" opacity="0.2" fill="none"/>
+    </pattern>
+  </defs>
+  
+  <!-- Polished marble background -->
+  <rect width="400" height="300" fill="url(#marbleVeins)"/>
+  
+  <!-- Shine effects -->
+  <ellipse cx="120" cy="90" rx="80" ry="50" fill="url(#shine1)"/>
+  <ellipse cx="280" cy="180" rx="60" ry="40" fill="url(#shine2)"/>
+  
+  <!-- Reflection highlights -->
+  <path d="M50,50 Q200,40 350,60" stroke="#FFFFFF" stroke-width="1" opacity="0.4" fill="none"/>
+  <path d="M30,150 Q200,140 370,160" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3" fill="none"/>
+  <path d="M80,250 Q200,240 320,260" stroke="#FFFFFF" stroke-width="0.6" opacity="0.2" fill="none"/>
+  
+  <!-- Golden accent reflection -->
+  <ellipse cx="200" cy="100" rx="15" ry="8" fill="#D4AF37" opacity="0.3"/>
+  
+  <!-- Overall shine overlay -->
+  <rect x="0" y="0" width="400" height="300" fill="url(#shine1)" opacity="0.1"/>
+  
+  <!-- Text overlay -->
+  <rect x="270" y="250" width="120" height="40" fill="rgba(0,0,0,0.8)" rx="4"/>
+  <text x="330" y="265" text-anchor="middle" fill="#E5E7EB" font-family="Inter, sans-serif" font-size="12" font-weight="500">DEPOIS</text>
+  <text x="330" y="280" text-anchor="middle" fill="#D4AF37" font-family="Inter, sans-serif" font-size="10">Mármore polido</text>
+</svg>

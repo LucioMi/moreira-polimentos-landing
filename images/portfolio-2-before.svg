@@ -1,0 +1,46 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="graniteTexture" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#2C2C2C"/>
+      <circle cx="2" cy="2" r="0.5" fill="#444"/>
+      <circle cx="6" cy="4" r="0.3" fill="#555"/>
+      <circle cx="4" cy="6" r="0.4" fill="#333"/>
+    </pattern>
+    <linearGradient id="dullGranite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2C2C2C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F0F0F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Dull granite background -->
+  <rect width="400" height="300" fill="url(#graniteTexture)"/>
+  <rect width="400" height="300" fill="url(#dullGranite)" opacity="0.7"/>
+  
+  <!-- Water stains -->
+  <ellipse cx="100" cy="70" rx="35" ry="25" fill="#444" opacity="0.6"/>
+  <ellipse cx="300" cy="120" rx="40" ry="30" fill="#555" opacity="0.5"/>
+  <ellipse cx="180" cy="200" rx="25" ry="18" fill="#333" opacity="0.7"/>
+  
+  <!-- Etching marks -->
+  <circle cx="250" cy="80" r="12" fill="none" stroke="#666" stroke-width="1" opacity="0.4"/>
+  <circle cx="150" cy="160" r="8" fill="none" stroke="#555" stroke-width="0.8" opacity="0.5"/>
+  
+  <!-- Scratches and wear -->
+  <path d="M30,40 L120,50" stroke="#666" stroke-width="1.5" opacity="0.4"/>
+  <path d="M200,90 L320,100" stroke="#555" stroke-width="1" opacity="0.5"/>
+  <path d="M60,180 L180,170" stroke="#777" stroke-width="0.8" opacity="0.3"/>
+  <path d="M280,200 L370,210" stroke="#444" stroke-width="1.2" opacity="0.4"/>
+  
+  <!-- Dull surface overlay -->
+  <rect x="0" y="0" width="400" height="300" fill="#1A1A1A" opacity="0.3"/>
+  
+  <!-- Dirt accumulation -->
+  <ellipse cx="80" cy="250" rx="20" ry="10" fill="#111" opacity="0.8"/>
+  <ellipse cx="320" cy="260" rx="25" ry="12" fill="#0A0A0A" opacity="0.7"/>
+  
+  <!-- Text overlay -->
+  <rect x="10" y="250" width="120" height="40" fill="rgba(0,0,0,0.8)" rx="4"/>
+  <text x="70" y="265" text-anchor="middle" fill="#E5E7EB" font-family="Inter, sans-serif" font-size="12" font-weight="500">ANTES</text>
+  <text x="70" y="280" text-anchor="middle" fill="#9CA3AF" font-family="Inter, sans-serif" font-size="10">Granito opaco</text>
+</svg>
