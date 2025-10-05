@@ -713,7 +713,7 @@ p, li, span {
 .section-with-bg {
     position: relative;
     min-height: 560px;
-    background-image: url('public/images/marble-background.jpg');
+ background-image: url('images/white-marble-floor.svg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
