@@ -10,7 +10,8 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
     background-color: #0B0B0B;
     color: #FFFFFF;
     font-size: 16px;
@@ -42,8 +43,8 @@ body {
 
 /* Tipografia */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 600;
+    font-family: 'Cinzel', Georgia, serif;
+    font-weight: 700;
     line-height: 1.3;
     margin-bottom: 1rem;
 }
@@ -97,8 +98,8 @@ p {
     padding: 16px 32px;
     border: none;
     border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 1rem;
     text-decoration: none;
     cursor: pointer;
@@ -214,18 +215,18 @@ p {
 }
 
 .navbar-brand-text {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cinzel', Georgia, serif;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #D4AF37;
     white-space: nowrap;
 }
 
 .navbar-brand-mobile-text {
     display: none;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cinzel', Georgia, serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #D4AF37;
     text-align: center;
 }
@@ -430,7 +431,7 @@ p {
 }
 
 .mobile-menu-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     font-size: 1.25rem;
     font-weight: 600;
     color: #D4AF37;
@@ -1144,7 +1145,7 @@ p, li, span {
     left: 20px;
     font-size: 4rem;
     color: #D4AF37;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     line-height: 1;
 }
 
@@ -1349,9 +1350,12 @@ p, li, span {
     display: block;
     color: #D4AF37;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 12px;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
