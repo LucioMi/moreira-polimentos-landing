@@ -39,13 +39,15 @@ nandim/
 ├── index.html          # Estrutura principal
 ├── styles.css          # Estilos CSS premium
 ├── script.js           # JavaScript interativo
-├── images/             # Portfólio SVG
+├── public/images/      # Imagens do site (portfólio, fundo, logo)
 │   ├── portfolio-1-before.svg
 │   ├── portfolio-1-after.svg
 │   ├── portfolio-2-before.svg
 │   ├── portfolio-2-after.svg
 │   ├── portfolio-3-before.svg
-│   └── portfolio-3-after.svg
+│   ├── portfolio-3-after.svg
+│   ├── fundo-s1.webp
+│   └── logo.webp
 └── README.md           # Documentação
 ```
 

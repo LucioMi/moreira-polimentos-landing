@@ -171,11 +171,15 @@ p {
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    box-sizing: border-box;
     background-color: rgba(11, 11, 11, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     z-index: 1000;
     transition: all 0.3s ease;
+    overflow: visible;
+    min-height: 76px;
 }
 
 .navbar.scrolled {
@@ -187,6 +191,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 76px;
     padding-top: 16px;
     padding-bottom: 16px;
 }
@@ -209,9 +214,11 @@ p {
 }
 
 .navbar-logo {
-    height: 40px;
+    max-height: 40px;
+    height: auto;
     width: auto;
     flex-shrink: 0;
+    display: block;
 }
 
 .navbar-brand-text {
@@ -283,6 +290,9 @@ p {
 }
 
 @media (min-width: 1024px) {
+    body {
+        padding-top: 76px; /* offset da navbar fixa no desktop */
+    }
     .navbar-menu {
         display: flex;
     }
@@ -294,6 +304,7 @@ p {
     font-weight: 400;
     transition: color 0.2s ease;
     position: relative;
+    line-height: 1.4;
 }
 
 .navbar-link:hover {
@@ -702,7 +713,7 @@ p, li, span {
 .section-with-bg {
     position: relative;
     min-height: 560px;
-    background-image: url('./images/marble-background.jpg');
+    background-image: url('public/images/marble-background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -928,7 +939,7 @@ p, li, span {
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: default;
 }
 
 .portfolio-item:hover {
@@ -952,6 +963,63 @@ p, li, span {
 
 .portfolio-item:hover img {
     transform: scale(1.05);
+}
+
+.portfolio-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .carousel-slide img {
+    transform: scale(1.05);
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #D4AF37;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 8px;
+}
+
+.carousel-next {
+    right: 8px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(212, 175, 55, 0.15);
 }
 
 .portfolio-label {
@@ -1154,7 +1222,7 @@ p, li, span {
 }
 
 .testimonial-content p {
-    color: #E5E7EB;
+    color: #9CA3AF;
     font-style: italic;
     margin: 0;
 }

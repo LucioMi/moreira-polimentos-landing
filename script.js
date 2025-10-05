@@ -266,34 +266,40 @@ function closeLightbox() {
     }
 }
 
-// Add click events to portfolio items
-portfolioItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const beforeImg = item.querySelector('.portfolio-before img');
-        const afterImg = item.querySelector('.portfolio-after img');
-        
-        if (beforeImg && afterImg) {
-            openLightbox(
-                beforeImg.src,
-                afterImg.src,
-                beforeImg.alt,
-                afterImg.alt
-            );
-        }
-    });
-    
-    // Add keyboard support
-    item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            item.click();
-        }
-    });
-    
-    // Make portfolio items focusable
-    item.setAttribute('tabindex', '0');
-    item.setAttribute('role', 'button');
-    item.setAttribute('aria-label', 'Ver imagens em tamanho maior');
+// Removido comportamento de lightbox nos cards; carrossel controla navegação.
+
+// Portfólio Carrossel
+const carousels = document.querySelectorAll('.portfolio-carousel');
+carousels.forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    let index = 0;
+
+    function updateCarousel() {
+        if (!track) return;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            index = (index - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            index = (index + 1) % slides.length;
+            updateCarousel();
+        });
+    }
+
+    // Inicializa a posição
+    updateCarousel();
 });
 
 // Intersection Observer for animations
