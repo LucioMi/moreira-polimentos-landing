@@ -21,6 +21,10 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Effects (preload + noscript) -->
+    <link rel="preload" href="/effects.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/effects.css"></noscript>
+    <script src="/effects.js" defer></script>
     
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
