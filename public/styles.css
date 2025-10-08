@@ -977,7 +977,9 @@ p, li, span {
 }
 
 .carousel-slide {
-    min-width: 100%;
+    /* Garante que cada slide ocupe 100% da largura do carrossel
+       e não encolha, evitando problemas de navegação */
+    flex: 0 0 100%;
     position: relative;
 }
 
@@ -1007,6 +1009,7 @@ p, li, span {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 2; /* Mantém os botões acima das imagens para garantir clique */
 }
 
 .carousel-prev {
